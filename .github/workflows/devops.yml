@@ -1,0 +1,16 @@
+name: Build and Deploy
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build:
+        runs-on: centos-latest
+        steps:
+            - name: "checkout"
+              uses: actions/checkout@master
+
+            - name: "go test"
+              run:  go test
