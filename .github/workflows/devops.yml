@@ -37,3 +37,10 @@ jobs:
                   kubectl get pods -n kube-system
                   echo "current-context:" $(kubectl config current-context)
                   echo "environment-kubeconfig:" ${KUBECONFIG}
+
+            - name: "checkout csi driver"
+              uses: actions/checkout@v1  
+              with:
+                repository: dell/csi-vxflexos
+
+                
